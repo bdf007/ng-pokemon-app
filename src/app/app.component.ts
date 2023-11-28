@@ -8,7 +8,7 @@ import { Pokemon } from './pokemon';
   selector: 'app-root',
   standalone: true,
   imports: [CommonModule, RouterOutlet],
-  templateUrl: './app.component.html',
+  templateUrl: 'app.component.html',
   styles: [],
 })
 export class AppComponent implements OnInit {
@@ -19,10 +19,10 @@ export class AppComponent implements OnInit {
   
   ngOnInit() {
     console.table(this.pokemonListe);
-    this.selectPokemon(this.pokemonListe[0]);
   }
 
-  selectPokemon(pokemon: Pokemon) {
-    console.log(`Vous avez cliqué sur le pokemon ${pokemon.name}`);
+  selectPokemon(event: MouseEvent) {
+    const index: number = +(event.target as HTMLInputElement).value;
+    console.log(`Vous avez cliqué sur le pokemon ${this.pokemonListe[index].name}`);
   }
 }
