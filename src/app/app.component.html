@@ -1,4 +1,4 @@
-<h1>{{ title }}!</h1>
+<h1 class="center">{{ title }}!</h1>
 <input #input (keyup.enter)="selectPokemon(input.value)" type="number" />
 <p *ngIf="pokemonSelected">
   Vous avez sélectionné le pokemon : {{ pokemonSelected.name }}
@@ -10,24 +10,31 @@
 </p> -->
 <div class="container">
   <div class="row">
-    <div class="col s12 m7">
-      <div class="card" *ngFor="let pokemon of pokemonListe">
+    <div class="col m4 s6" *ngFor="let pokemon of pokemonListe">
+      <div class="card horizontal">
         <div class="card-image">
           <img [src]="pokemon.picture" [alt]="pokemon.name" />
-          <span class="card-title">pokemon.name</span>
         </div>
-        <div class="card-cotent">
-          <p>nom: {{ pokemon.name }}</p>
-          <p>hp : {{ pokemon.hp }}</p>
-          <p>cp : {{ pokemon.cp }}</p>
-          <p *ngFor="let type of pokemon.types">types : {{ type }}</p>
-          <p>crée le {{ pokemon.created }}</p>
+        <div class="card-stacked">
+          <div class="card-content">
+            <p>nom: {{ pokemon.name }}</p>
+            <p>hp : {{ pokemon.hp }}</p>
+            <p>cp : {{ pokemon.cp }}</p>
+            <p>
+              types :
+              <span *ngFor="let type of pokemon.types">
+                {{ type }}
+              </span>
+            </p>
+            <p>
+              <small> crée le {{ pokemon.created }} </small>
+            </p>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-
 <!-- <p>{{ pokemonListe[0].name }}</p>
 <p>{{ pokemonListe[1].name }}</p>
 <p>{{ pokemonListe[2].name }}</p>
