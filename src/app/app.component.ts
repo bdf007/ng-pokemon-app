@@ -7,12 +7,12 @@ import { RouterOutlet } from '@angular/router';
   standalone: true,
   imports: [CommonModule, RouterOutlet],
   template: `
-    <h1>Welcome to {{title}}!</h1>
+    <h1>Bienvnue sur {{title}}!</h1>
 
     <router-outlet></router-outlet>
   `,
   styles: [],
 })
 export class AppComponent {
-  title = 'ng-pokemon-app';
+  title = 'application Pokemon';
 }
