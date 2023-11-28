@@ -11,15 +11,15 @@
 <div class="container">
   <div class="row">
     <div class="col m4 s6" *ngFor="let pokemon of pokemonListe">
-      <div class="card horizontal">
+      <div class="card horizontal" pkmnBorderCard="blue">
         <div class="card-image">
           <img [src]="pokemon.picture" [alt]="pokemon.name" />
         </div>
         <div class="card-stacked">
           <div class="card-content">
             <p>nom: {{ pokemon.name }}</p>
-            <p>hp : {{ pokemon.hp }}</p>
-            <p>cp : {{ pokemon.cp }}</p>
+            <!-- <p>hp : {{ pokemon.hp }}</p>
+            <p>cp : {{ pokemon.cp }}</p> -->
             <p>
               types :
               <span *ngFor="let type of pokemon.types">
@@ -27,7 +27,7 @@
               </span>
             </p>
             <p>
-              <small> crée le {{ pokemon.created }} </small>
+              <small> créé le {{ pokemon.created }} </small>
             </p>
           </div>
         </div>
